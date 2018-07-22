@@ -750,6 +750,7 @@ $size-header-pad: 4em;
 		padding: 0;
 
 		li {
+			text-align: left;
 			line-height: 1.75em;
 			margin: 1.5em 0 0 0;
 			padding-left: 2.25em;
@@ -1066,7 +1067,7 @@ $size-header-pad: 4em;
 		left: 0;
 		padding: ($size-header-pad * 2) $size-header-pad;
 		position: fixed;
-		text-align: right;
+		text-align: center;
 		top: 0;
 		width: $size-header-width;
 

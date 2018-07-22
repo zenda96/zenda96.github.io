@@ -2052,7 +2052,7 @@ input, select, textarea {
 				border-radius: 0.35em;
 				border: solid 3px rgba(255, 255, 255, 0.5);
 				color: #fff;
-				content: 'View';
+				content: '查看';
 				display: inline-block;
 				font-size: 0.8em;
 				font-weight: 400;
@@ -2581,9 +2581,9 @@ input, select, textarea {
 		left: 0;
 		padding: 8em 4em;
 		position: fixed;
-		text-align: right;
+		text-align: center;
 		top: 0;
-		width: 35%;
+		width: 20%;
 	}
 
 		#header > * {
@@ -2661,10 +2661,10 @@ input, select, textarea {
 /* Main */
 
 	#main {
-		margin-left: 35%;
+		margin-left: 20%;
 		max-width: 54em;
 		padding: 8em 4em 4em 4em;
-		width: calc(100% - 35%);
+		width: calc(100% - 20%);
 	}
 
 		#main > section {
