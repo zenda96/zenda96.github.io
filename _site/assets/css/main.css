@@ -279,7 +279,12 @@ input, select, textarea {
 				width: 100% !important;
 				max-width: 100% !important;
 			}
-
+			.default--left-content{
+				margin-right: 20px!important;
+			}
+			.default--right-cat{
+				display: none;
+			}
 		}
 
 		@media screen and (max-width: 480px) {
@@ -287,7 +292,12 @@ input, select, textarea {
 			.container {
 				max-width: calc(100% - 3em);
 			}
-
+			.default--left-content{
+				margin-right: 20px!important;
+			}
+			.default--right-cat{
+				display: none;
+			}
 		}
 
 /* Row */
@@ -3186,3 +3196,4 @@ input, select, textarea {
 			}
 
 	}
+	

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <link rel="stylesheet" href="../assets/css/main.css" />
+    <link rel="stylesheet" href="../assets/css/base.css" />
+    <title>{{ page.title }}</title>
+
+</head>
+
+<body>
+    <div class="default--page-container">
+        <div class="default--left-content">
+            {{ content }}
+        </div>
+        <div class="default--right-cat">
+            按照标签分类
+            <ul>
+                {% for cat in site.categories %}
+                {% if cat[0]!='index' %}
+                <li>
+                    <a href="{{ site.baseurl}}/index/{{ cat.first }}-index.html">{{cat[0]}}（{{cat.last.size}}）</a>
+                </li>
+                {% endif%}
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+
+</body>
+
+</html>
