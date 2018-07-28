@@ -9,8 +9,12 @@ excerpt: "csssss"
 {% for category in site.categories %}
         {% if category[0]=='other' %}
             {% for post in category[1] %}
-            <li><a href="{{post.url}}">{{post.title}}</a>
-            <br>{{page.excerpt}}
+            <li>
+                <div>
+                     <a href="{{post.url}}">{{post.title}}</a>
+                </div>
+                {{page.excerpt}}
+                <span class="post-date">{{ post.date | date_to_string }}</span>
             </li>
             {% endfor %}
         {% endif%}
