@@ -5,6 +5,7 @@ ul li{
 	list-style: none;
 }
 .default--left-content{
+	border-right: 1px dashed #ccc;
 	  margin-right: 200px;
 	  padding: 50px;
 }
@@ -23,7 +24,10 @@ ul.posts-ul li:hover{
 	background:rgba(126,197,176,0.1)
 }
 .default--right-cat{
-		position: fixed;
-		top:50px;
-		right: 100px;
+	box-shadow: 0px 1px 3px #999;
+    padding: 20px;
+    background: #fff;
+    position: fixed;
+    top: 50px;
+    right: 30px;
 	}

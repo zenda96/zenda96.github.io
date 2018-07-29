@@ -2,6 +2,7 @@
 layout: display
 title:  "jekyll 里的 markdown 语法"
 categories: other
+digest: "markdown的各种语法"
 ---
 <h2>{{ page.title }}</h2>
 <p>{{ page.date | date_to_string }}</p>

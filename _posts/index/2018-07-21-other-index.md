@@ -13,7 +13,7 @@ excerpt: "csssss"
                 <div>
                      <a href="{{post.url}}">{{post.title}}</a>
                 </div>
-                {{page.excerpt}}
+                {{post.digest}}
                 <span class="post-date">{{ post.date | date_to_string }}</span>
             </li>
             {% endfor %}
