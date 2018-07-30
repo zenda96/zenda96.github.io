@@ -7,10 +7,14 @@ excerpt: "摘要摘要222"
 ---
 <ul class="posts-ul">
 {% for category in site.categories %}
-        {% if category[0]=='js' %}
+        {% if category[0]=='front-end' %}
             {% for post in category[1] %}
-            <li><a href="{{post.url}}">{{post.title}}</a>
-            <br>{{page.excerpt}}
+            <li>
+                <div>
+                     <a href="{{post.url}}">{{post.title}}</a>
+                </div>
+                {{post.digest}}
+                <span class="post-date">{{ post.date | date_to_string }}</span>
             </li>
             {% endfor %}
         {% endif%}
