@@ -3053,6 +3053,7 @@ input, select, textarea {
 		/* Footer */
 
 			#footer {
+				display: none;
 				background-attachment: scroll;
 				background-color: #1f1815;
 				background-image: url("images/overlay.png"), url("../../images/bg.jpg");
