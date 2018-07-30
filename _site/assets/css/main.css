@@ -1801,7 +1801,7 @@ input, select, textarea {
 	}
 
 	header.major h2 {
-		font-size: 2em;
+		font-size: 1.5em;
 	}
 
 /* Form */
@@ -2205,6 +2205,7 @@ input, select, textarea {
 	}
 
 		ul.labeled-icons li {
+			font-size: 0.8em;
 			line-height: 1.75em;
 			margin: 1.5em 0 0 0;
 			padding-left: 2.25em;
@@ -2672,8 +2673,7 @@ input, select, textarea {
 
 	#main {
 		margin-left: 20%;
-		max-width: 54em;
-		padding: 8em 4em 4em 4em;
+		padding: 2em 1em 1em 4em;
 		width: calc(100% - 20%);
 	}
 
@@ -3118,7 +3118,7 @@ input, select, textarea {
 			}
 
 			header.major h2 {
-				font-size: 1.35em;
+				font-size: 1.15em;
 			}
 
 		/* List */
