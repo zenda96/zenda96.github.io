@@ -10,7 +10,7 @@ excerpt: "csssss"
         {% if category[0]=='python' %}
             {% for post in category[1] %}
             <li><a href="{{post.url}}">{{post.title}}</a>
-            <br>{{page.excerpt}}
+            <br>{{post.digest}}
             </li>
             {% endfor %}
         {% endif%}

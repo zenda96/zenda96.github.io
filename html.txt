@@ -1,0 +1,887 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml" class="ver54"><head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="keywords" content="QQ群,群,群教育,一键加群,加群,群开放能力,群开放,群认证,2000人群,2K人群,QQ,Tencent" />
+<meta name="description" content="腾讯QQ群官方网站。提供QQ群最新功能介绍、群应用接入、开放接口、群认证等丰富内容，群聚你我精彩。" />
+<link rel="stylesheet" href="//s2.url.cn/qqun/qun/css/member-33c75.css" />
+<link rel="shortcut icon" href="//im.qq.com/favicon.ico" />
+<script>
+	var dt0 = new Date();
+</script>
+<title>QQ群官网-成员管理</title>
+</head>
+<body>
+	    <div class="header">
+        <div class="header-top">
+            <a href="//qun.qq.com" class="logo"></a>
+
+            <div class="header-nav">
+                <ul id="headerNav">
+                    <li><a href="/index.html#click">首页</a></li>
+                    <li><a href="http://buluo.qq.com/buluoadmin/home.html?platform=qun" target="_blank">群订阅号</a></li>
+                    <li><a href="/open.html#click">开放能力</a></li>
+                    <li class="selected"><a href="/manage.html#click" data-tag="manage">群管理</a></li>
+                    <li><a href="http://buluo.qq.com/p">兴趣部落</a></li>
+                    <li><a href="/join.html" data-tag="join">加群组件</a></li>
+                    <li><a href="http://kf.qq.com/product/group.html" target="_blank" data-tag="help">帮助</a></li>
+                </ul>
+                <div class="header-info" id="headerInfo"><p class="user-info"><a cmd="login" data-tag="login">登录</a></p><p>|</p><p><a href="http://support.qq.com/write.shtml?fid=35&amp;ADPUBNO=" target="_blank" data-tag="fk">反馈</a></p></div>
+            </div>
+        </div>
+    </div>
+
+	<div class="body">
+		<dl>
+			<dt>
+				<div class="group-tit">
+					<span id="groupTit"></span> <a id="changeGroup" data-tag="changegroup">[切换QQ群]</a>
+				</div>
+			</dt>
+			<dd>
+				<div class="group-tools">
+					<div class="group-members" id="groupMemberTit">
+					</div>
+					<div class="group-search">
+						<div class="group-input">
+							<input type="text" id="searchValue" data-def="搜索关键词" value="搜索关键词" />
+							<button id="searchBtn" data-tag="search" class="icon-search-btn"></button>
+						</div>
+						<div class="group-select-btn" data-tag="more">
+							<a data-tag="more">
+								<span data-tag="more">更多筛选</span>
+								<i data-tag="more" class="icon-arrow-blue"></i>
+							</a>
+						</div>
+					</div>
+					<div id="moreAction">
+						<div class="child group-select-more hide">	
+							<div class="group-top">
+								<div></div>
+							</div>			
+							<ul data-key="credit" data-tag="信用" data-type="0">
+								<li>
+									<label>信　　用：</label>
+								</li>
+								<li class="query-filter selected">不限</li>
+								<li class="query-filter">不良记录成员</li>
+							</ul>
+							<ul data-key="g" data-tag="性别" data-type="1">
+								<li>
+									<label>性　　别：</label>
+								</li>
+								<li class="query-filter selected">不限</li>
+								<li class="query-filter">男</li>
+								<li class="query-filter">女</li>
+							</ul>
+							<ul data-key="qage" data-tag="Q龄" data-type="2">
+								<li>
+									<label>Q　　龄：</label>
+								</li>
+								<li class="query-filter selected">不限</li>
+								<li class="query-filter">1年内</li>
+								<li class="query-filter">1年-3年</li>
+								<li class="query-filter">3年-5年</li>
+								<li class="query-filter">5-7年</li>
+								<li class="query-filter">7年以上</li>
+								<li class="query-filter sl" data-val="年"><input type="text" maxlength="2" /> - <input type="text" maxlength="2" /> 年</li>
+							</ul>
+							<ul data-key="join_time" data-tag="入群时长" data-type="3">
+								<li>
+									<label>入群时长：</label>
+								</li>
+								<li class="query-filter selected">不限</li>
+								<li class="query-filter">1个月内</li>
+								<li class="query-filter">1-3个月</li>
+								<li class="query-filter">3-6个月</li>
+								<li class="query-filter">6-12个月</li>
+								<li class="query-filter">12个月以上</li>
+								<li class="query-filter sl" data-val="月"><input type="text" maxlength="3" /> - <input type="text" maxlength="3" /> 月</li>							
+							</ul>
+							<ul data-key="lv" id="groupLevel" class="hide" data-tag="群等级" data-type="5">						
+							</ul>
+							<ul data-key="last_speak_time" data-tag="最后发言" data-type="4">
+								<li>
+									<label>最后发言：</label>
+								</li>
+								<li class="query-filter selected">不限</li>
+								<li class="query-filter">1个月内</li>
+								<li class="query-filter">1-3个月</li>
+								<li class="query-filter">3-6个月</li>
+								<li class="query-filter">6-12个月</li>
+								<li class="query-filter">12个月以上</li>
+								<li class="query-filter sl" data-val="月"><input type="text" maxlength="3" /> - <input type="text" maxlength="3" /> 月</li>							
+							</ul>																		
+							<div class="group-select-more-btm" id="groupSelectMoreBtm">
+								<div>筛选条件:</div>
+								<div id="selectResultTips">
+								</div>
+								<div class="select-result">
+									<button class="clear disabled" disabled="disabled">清除</button>
+									<button class="submit" data-tag="moresub">确定</button>
+								</div>	
+								<div class="clear"></div>
+							</div>
+						</div>
+						<div class="child group-select-result hide" id="groupSelectResult">
+
+						</div>					
+					</div>
+
+				</div>
+
+				<div class="group-memeber">
+					<table cellspacing="0" cellpadding="0" border="0" width="100%" id="groupMember" align="center">
+						<tbody><tr id="groupTh">
+							<th width="32" class="td-right"><input id="selectAll" type="checkbox" class="check-input" /></th>
+							<th width="20"></th>
+							<th class="th-left1" width="180">成员</th>
+							<th class="th-left th-card" width="110">群名片</th>
+							<th class="th-left th-mark" width="110">标签</th>
+							<th class="th-left" width="90">QQ号</th>
+							<th class="th-left" width="70">性别</th>
+							<th class="th-left th-desc" width="70">
+								<div class="group-desc">
+									<a class="link">Q龄</a> <i class="arrow"></i> <i class="icon-more-select"></i>
+									<ul class="group-desc-arrow">
+										<li cmd="desc" data-tag="orderq" data-idx="0" idx="0">默认</li>
+										<li cmd="desc" idx="9" data-tag="orderq" data-idx="0" order="0"><a data-tag="orderq" data-idx="0">Q龄</a> <i class="icon-arrow-desc"></i></li>
+										<li cmd="desc" idx="8" data-tag="orderq" data-idx="1" order="1"><a data-tag="orderq" data-idx="1">Q龄</a> <i class="icon-arrow-desc1"></i></li>
+									</ul>									
+								</div>
+							</th>
+							<th class="th-left th-desc" width="110">
+								<div class="group-desc">
+									<a class="link">入群时间</a> <i class="arrow"></i> <i class="icon-more-select"></i>
+									<ul class="group-desc-arrow">
+										<li cmd="desc" data-tag="jointime" data-idx="0" idx="0">默认</li>
+										<li cmd="desc" idx="11" data-tag="jointime" data-idx="0" order="0"><a data-tag="jointime" data-idx="0">入群时间</a> <i class="icon-arrow-desc"></i></li>
+										<li cmd="desc" idx="10" data-tag="jointime" data-idx="11" order="1"><a data-tag="jointime" data-idx="1">入群时间</a> <i class="icon-arrow-desc1"></i></li>
+									</ul>
+								</div>
+							</th>
+							<th class="th-left th-desc th-lv" width="110">
+								<div class="group-desc">
+									<a class="link">等级(积分)</a> <i class="arrow"></i> <i class="icon-more-select"></i>
+									<ul class="group-desc-arrow">
+										<li cmd="desc" data-tag="orderlv" data-idx="0" idx="0">默认</li>
+										<li cmd="desc" data-tag="orderlv" data-idx="0" idx="15" order="0"><a data-tag="orderlv" data-idx="0">等级(积分)</a> <i class="icon-arrow-desc"></i></li>
+										<li cmd="desc" data-tag="orderlv" data-idx="1" idx="14" order="1"><a data-tag="orderlv" data-idx="1">等级(积分)</a> <i class="icon-arrow-desc1"></i></li>
+									</ul>
+								</div>
+							</th>
+							<th class="th-left th-desc" width="110">
+								<div class="group-desc">
+									<a class="link">最后发言</a> <i class="arrow"></i> <i class="icon-more-select"></i>
+									<ul class="group-desc-arrow">
+										<li cmd="desc" data-tag="orderspeak" data-idx="0" idx="0">默认</li>
+										<li cmd="desc" data-tag="orderspeak" data-idx="0" idx="17" order="0"><a data-tag="orderspeak" data-idx="0">最后发言</a> <i class="icon-arrow-desc"></i></li>
+										<li cmd="desc" data-tag="orderspeak" data-idx="1" idx="16" order="1"><a data-tag="orderspeak" data-idx="1">最后发言</a> <i class="icon-arrow-desc1"></i></li>
+									</ul>
+								</div>
+							</th>
+							<th></th>
+						</tr>
+					</tbody></table>
+					<div id="searchEmpty"></div>
+				</div>
+
+			</dd>
+		</dl>
+	</div>
+
+		<div class="footer">
+		<p>友情链接：<a href="http://im.qq.com/" target="_blank">QQ官方网站</a> | <a href="http://open.qq.com/" target="_blank">腾讯开放平台</a> | <a href="http://qun.qq.com/qunlearn/qunlearn.html" target="_blank">在线教育介绍</a> | <a href="http://shang.qq.com" target="_blank">QQ商家</a> | <a href="http://vip.qq.com/" target="_blank">QQ会员</a> | <a href="https://docs.qq.com/?adtag=qunguanli" target="_blank">腾讯文档</a></p>
+	    <p>Copyright © 1998-2015 Tencent. All Rights Reserved.</p>
+	    <p>腾讯公司 版权所有</p>
+	</div>
+	<script type="text/javascript">
+	    function loadJs(){
+	        var href = location.href;
+	        var dom = document.createElement('script');
+	        if(href.indexOf('https://') &gt;= 0){
+	            dom.src = 'https://pingjs.qq.com/tcss.ping.https.js';
+	        }else{
+	            dom.src = 'http://pingjs.qq.com/tcss.ping.js';
+	        }
+	        document.body.appendChild(dom);
+	    }
+	    loadJs();
+	</script><script src="https://pingjs.qq.com/tcss.ping.https.js"></script>
+
+
+	<script type="text/template" id="newGroupMemberTmp">
+		&lt;%
+			for(var i in list){
+				var item = list[i];
+		%&gt;
+			&lt;li&gt;
+				&lt;a&gt;
+					&lt;span&gt;&lt;img src="&lt;%=avater(item.uin)%&gt;" /&gt;&lt;%=item.name%&gt;(&lt;%=html(item.uin)%&gt;)&lt;/span&gt; 
+					&lt;div class="i-link" data-id="&lt;%=attr(item.uin)%&gt;"&gt;&lt;p&gt;&lt;i class="icon-close"&gt;&lt;/i&gt;&lt;/p&gt;&lt;/div&gt;
+				&lt;/a&gt;
+			&lt;/li&gt;
+		&lt;%}%&gt;	
+	</script>
+
+	<script type="text/template" id="friendsmartTmp">
+		&lt;ul&gt;
+		&lt;%
+		for(var i=0,l=list.length;i&lt;l;i++){
+			var item = list[i];
+		%&gt;
+			&lt;li title=&lt;%=attr(item.name)%&gt; data-id="&lt;%=attr(item.uin)%&gt;"&gt;
+				&lt;a&gt;&lt;img src="&lt;%=avater(item.uin)%&gt;" /&gt;&lt;%=item.oname%&gt;(&lt;%=item.ouin%&gt;)&lt;/a&gt;
+			&lt;/li&gt;
+		&lt;%}%&gt;
+		&lt;/ul&gt;
+	</script>
+
+	<script type="text/template" id="myFriendTmp">
+		&lt;div class="member-body"&gt;
+			&lt;div class="input-tit"&gt;
+				&lt;div class="input-search"&gt;
+					&lt;input type="text" class="dialog-search-input" value="搜索关键词" data-def="搜索关键词" /&gt;
+					&lt;button class="group-search-btn icon-search-btn"&gt;&lt;/button&gt;
+				&lt;/div&gt;
+				&lt;div class="search-smart"&gt;
+				&lt;/div&gt;
+			&lt;/div&gt;
+			&lt;div class="my-friend"&gt;
+				&lt;ul class="my-friend-list" id="myFriendList"&gt;
+					&lt;%
+						for(var i in list){
+							var item = list[i];
+					%&gt;
+						&lt;li class="friend-group"&gt;
+							&lt;a class="friend-group-name" data-child="&lt;%if(item.mems){%&gt;1&lt;%}else{%&gt;0&lt;%}%&gt;"&gt;&lt;i &lt;%if(item.mems){%&gt;class="icon-arrow-left"&lt;%}%&gt;&gt;&lt;/i&gt; &lt;span&gt;&lt;%if(item.gname){%&gt;&lt;%=item.gname%&gt;&lt;%}else{%&gt;我的好友&lt;%}%&gt;&lt;/span&gt; &lt;i data-idx="&lt;%=i%&gt;" class="icon-friend-join"&gt;&lt;/i&gt;&lt;/a&gt;
+							&lt;%if(item.mems){%&gt;
+								&lt;ul class="friend-group-list"&gt;
+									&lt;%
+										for(var m=0,n=item.mems.length;m&lt;n;m++){
+											var obj = item.mems[m];
+									%&gt;
+									&lt;li&gt;
+										&lt;a class="friend" data-id="&lt;%=attr(obj.uin)%&gt;"&gt;&lt;img src="&lt;%=avater(obj.uin)%&gt;" /&gt;&lt;%=obj.name%&gt;(&lt;%=obj.uin%&gt;)&lt;/a&gt;
+									&lt;/li&gt;
+									&lt;%}%&gt;
+								&lt;/ul&gt;
+							&lt;%}%&gt;
+						&lt;/li&gt;
+					&lt;%}%&gt;
+				&lt;/ul&gt;
+				&lt;div class="icon-arrow-join"&gt;&lt;/div&gt;
+				&lt;ul class="selected-friend" id="newGroupMemberList"&gt;
+					
+				&lt;/ul&gt;
+			&lt;/div&gt;
+		&lt;/div&gt;				
+	</script>
+
+	<script type="text/template" id="searchResultTmp">
+		&lt;div class="clear"&gt;&lt;/div&gt;
+		&lt;%if(!$.isEmptyObject(tips)){%&gt;
+		&lt;div&gt;筛选条件:&lt;/div&gt;
+		&lt;div class="result-zone" id="groupSelectResultTips"&gt;
+			&lt;%
+				for(var i in tips){
+					var item = tips[i];
+			%&gt;
+			&lt;a class="select-result select-result&lt;%=attr(item.type)%&gt;"&gt;&lt;span&gt;&lt;%=html(item.tag)%&gt;： &lt;%=html(item.value)%&gt;&lt;/span&gt; &lt;i class="icon-close" data-key="&lt;%=attr(item.key)%&gt;"&gt;&lt;/i&gt;&lt;/a&gt;
+			&lt;%}%&gt;
+		&lt;/div&gt;
+		&lt;div class="select-result" id="searchResult"&gt;
+			&lt;%if(key!=''){%&gt;搜索条件：&lt;span&gt;&lt;%=html(key)%&gt;&lt;/span&gt;&lt;%}%&gt;   共&lt;span&gt;  &lt;%=html(num)%&gt; &lt;/span&gt; 人符合条件，&lt;a class="reset-search"&gt;清空条件&lt;/a&gt;			
+		&lt;/div&gt;	
+		&lt;%}else{%&gt;
+			共搜索出含“&lt;span&gt;&lt;%=html(key)%&gt;&lt;/span&gt;”的群成员：&lt;span&gt; &lt;%=html(num)%&gt; 人&lt;/span&gt;　
+			&lt;a class="reset-search"&gt;返回全员列表&lt;/a&gt;
+		&lt;%}%&gt;	
+		&lt;div class="clear"&gt;&lt;/div&gt;
+	</script>
+
+	<script type="text/template" id="tagMenuTmp">
+		&lt;div class="mark-div"&gt;
+			&lt;div class="mark-select"&gt;
+				&lt;div class="mark-select-tit"&gt;
+					&lt;span&gt;&lt;%if(tag&gt;=0 &amp;&amp; list[tag]){%&gt;&lt;%=list[tag]%&gt;&lt;%}%&gt;&lt;/span&gt;
+					&lt;i class="icon-arrow-gray"&gt;&lt;/i&gt;
+				&lt;/div&gt;
+				
+				&lt;ul&gt;
+					&lt;%
+						for(var i in list){
+					%&gt;
+						&lt;li&gt;&lt;a data-tag="changetag" data-idx="&lt;%=attr(i)%&gt;"&gt;&lt;%=list[i]%&gt;&lt;/a&gt;&lt;/li&gt;
+					&lt;%}%&gt;
+					&lt;li&gt;&lt;a data-tag="changetag" data-idx="-1"&gt;&amp;nbsp;&lt;/a&gt;&lt;/li&gt;
+				&lt;/ul&gt;
+				&lt;div class="mark-select-add"&gt;
+					&lt;a&gt;&lt;i class="icon-add-mark"&gt;&lt;/i&gt;添加&lt;/a&gt;
+				&lt;/div&gt;
+			&lt;/div&gt;									
+		&lt;/div&gt;
+	</script>
+
+	<script type="text/template" id="searchResultTipTmp">
+		&lt;a class="select-result &lt;%if(type){%&gt;select-result&lt;%=attr(type)%&gt;&lt;%}%&gt; &lt;%if(key){%&gt;select-result&lt;%=attr(key)%&gt;&lt;%}%&gt;"&gt;&lt;span&gt;&lt;%=html(tag)%&gt;： &lt;%=html(value)%&gt;&lt;/span&gt; &lt;i class="icon-close" data-type="&lt;%=attr(type)%&gt;" data-key="&lt;%=attr(key)%&gt;"&gt;&lt;/i&gt;&lt;/a&gt;
+	</script>
+
+	<script type="text/template" id="groupMemberThTmp">
+		&lt;th width="32" class="td-right"&gt;
+			&lt;%if(show){%&gt;
+				&lt;input id="selectAll" type="checkbox" class="check-input" /&gt;
+			&lt;%}%&gt;
+		&lt;/th&gt;
+		&lt;th width="30"&gt;&lt;/th&gt;
+		&lt;th class="th-left1" width="&lt;%=w.member%&gt;"&gt;成员&lt;/th&gt;
+		&lt;th class="th-left th-card" width="&lt;%=w.card%&gt;"&gt;群名片&lt;/th&gt;
+		&lt;%if(tag){%&gt;
+		&lt;th class="th-left th-mark" width="110"&gt;标签&lt;/th&gt;
+		&lt;%}%&gt;
+		&lt;th class="th-left" width="&lt;%=w.qq%&gt;"&gt;QQ号&lt;/th&gt;
+		&lt;th class="th-left" width="&lt;%=w.sex%&gt;"&gt;性别&lt;/th&gt;
+		&lt;th class="th-left th-desc" width="&lt;%=w.qage%&gt;"&gt;
+			&lt;div class="group-ff"&gt;
+				&lt;div class="group-desc"&gt;
+					&lt;a class="link"&gt;Q龄&lt;/a&gt; &lt;i class="arrow"&gt;&lt;/i&gt; &lt;i class="icon-more-select"&gt;&lt;/i&gt;
+					&lt;ul class="group-desc-arrow"&gt;
+						&lt;li cmd="desc" data-tag="age" data-idx="0" idx="0"&gt;默认&lt;/li&gt;
+						&lt;li cmd="desc" data-tag="age" data-idx="0" idx="9" order="0"&gt;&lt;a data-tag="age" data-idx="0"&gt;Q龄&lt;/a&gt; &lt;i class="icon-arrow-desc"&gt;&lt;/i&gt;&lt;/li&gt;
+						&lt;li cmd="desc" data-tag="age" data-idx="1" idx="8" order="1"&gt;&lt;a data-tag="age" data-idx="1"&gt;Q龄&lt;/a&gt; &lt;i class="icon-arrow-desc1"&gt;&lt;/i&gt;&lt;/li&gt;
+					&lt;/ul&gt;									
+				&lt;/div&gt;
+			&lt;/div&gt;
+		&lt;/th&gt;
+		&lt;th class="th-left th-desc" width="&lt;%=w.join%&gt;"&gt;
+			&lt;div class="group-ff"&gt;
+				&lt;div class="group-desc"&gt;
+					&lt;a class="link"&gt;入群时间&lt;/a&gt; &lt;i class="arrow"&gt;&lt;/i&gt; &lt;i class="icon-more-select"&gt;&lt;/i&gt;
+					&lt;ul class="group-desc-arrow"&gt;
+						&lt;li cmd="desc" data-tag="jointime" data-idx="0" idx="0"&gt;默认&lt;/li&gt;
+						&lt;li cmd="desc" data-tag="jointime" data-idx="0" idx="11" order="0"&gt;&lt;a data-tag="jointime" data-idx="0"&gt;入群时间&lt;/a&gt; &lt;i class="icon-arrow-desc"&gt;&lt;/i&gt;&lt;/li&gt;
+						&lt;li cmd="desc" data-tag="jointime" data-idx="1" idx="10" order="1"&gt;&lt;a data-tag="jointime" data-idx="1"&gt;入群时间&lt;/a&gt; &lt;i class="icon-arrow-desc1"&gt;&lt;/i&gt;&lt;/li&gt;
+					&lt;/ul&gt;
+				&lt;/div&gt;
+			&lt;/div&gt;
+		&lt;/th&gt;
+		&lt;%if(lv){%&gt;
+		&lt;th class="th-left th-desc th-lv" width="&lt;%=w.lv%&gt;"&gt;
+			&lt;div class="group-ff"&gt;
+				&lt;div class="group-desc"&gt;
+					&lt;a class="link"&gt;等级(积分)&lt;/a&gt; &lt;i class="arrow"&gt;&lt;/i&gt; &lt;i class="icon-more-select"&gt;&lt;/i&gt;
+					&lt;ul class="group-desc-arrow"&gt;
+						&lt;li cmd="desc" data-tag="rank" data-idx="0" idx="0"&gt;默认&lt;/li&gt;
+						&lt;li cmd="desc" data-tag="rank" data-idx="0" idx="15" order="0"&gt;&lt;a data-tag="orderlv" data-idx="0"&gt;等级(积分)&lt;/a&gt; &lt;i class="icon-arrow-desc"&gt;&lt;/i&gt;&lt;/li&gt;
+						&lt;li cmd="desc" data-tag="rank" data-idx="1" idx="14" order="1"&gt;&lt;a data-tag="orderlv" data-idx="1"&gt;等级(积分)&lt;/a&gt; &lt;i class="icon-arrow-desc1"&gt;&lt;/i&gt;&lt;/li&gt;
+					&lt;/ul&gt;
+				&lt;/div&gt;
+			&lt;/div&gt;
+		&lt;/th&gt;
+		&lt;%}%&gt;
+		&lt;th class="th-left th-desc" width="110"&gt;
+			&lt;div class="group-ff"&gt;
+				&lt;div class="group-desc"&gt;
+					&lt;a class="link"&gt;最后发言&lt;/a&gt; &lt;i class="arrow"&gt;&lt;/i&gt; &lt;i class="icon-more-select"&gt;&lt;/i&gt;
+					&lt;ul class="group-desc-arrow"&gt;
+						&lt;li cmd="desc" data-tag="lastmsg" data-idx="0"  idx="0"&gt;默认&lt;/li&gt;
+						&lt;li cmd="desc" data-tag="lastmsg" data-idx="0"  idx="17" order="0"&gt;&lt;a data-tag="orderspeak" data-idx="0" &gt;最后发言&lt;/a&gt; &lt;i class="icon-arrow-desc"&gt;&lt;/i&gt;&lt;/li&gt;
+						&lt;li cmd="desc" data-tag="lastmsg" data-idx="1"  idx="16" order="1"&gt;&lt;a  data-tag="orderspeak" data-idx="1" &gt;最后发言&lt;/a&gt; &lt;i class="icon-arrow-desc1"&gt;&lt;/i&gt;&lt;/li&gt;
+					&lt;/ul&gt;
+				&lt;/div&gt;
+			&lt;/div&gt;
+		&lt;/th&gt;
+		&lt;th width="20"&gt;&lt;/th&gt;
+	</script>
+
+	<script type="text/template" id="groupMemberEmptyTmp">
+		&lt;div class="empty"&gt;没有符合筛选条件的群成员&lt;/div&gt;
+	</script>
+
+	<script type="text/template" id="groupMemberTmp">
+		&lt;tbody class="list"&gt;
+		&lt;%
+			for(var i =0,l=list.length;i&lt;l;i++){
+				var item = list[i];
+				st++
+		%&gt;
+		&lt;tr class="mb mb&lt;%=item.uin%&gt;"&gt;
+			&lt;td class="td-right"&gt;
+				&lt;%if(type == 'create'){%&gt;
+					&lt;%if(item.role != 0){%&gt;
+					&lt;input id="input&lt;%=attr(item.uin)%&gt;" type="checkbox" class="check-input" value="&lt;%=attr(item.uin)%&gt;" data-type="&lt;%=item.role%&gt;" /&gt;
+					&lt;%}%&gt;
+				&lt;%}else if(type=='manage'){%&gt;
+					&lt;%if(item.role == 2){%&gt;
+						&lt;input  id="input&lt;%=attr(item.uin)%&gt;" type="checkbox" class="check-input" value="&lt;%=attr(item.uin)%&gt;" data-type="&lt;%=item.role%&gt;" /&gt;
+					&lt;%}%&gt;					
+				&lt;%}%&gt;
+			&lt;/td&gt;
+			&lt;td class="td-no"&gt;&lt;%=html(st)%&gt;&lt;/td&gt;
+			&lt;td class="td-user-nick"&gt;
+				&lt;%if(item.role==0){%&gt;
+					&lt;a class="group-master-a"&gt;&lt;i class="icon-group-master"&gt;&lt;/i&gt;&lt;/a&gt;
+				&lt;%}else if(item.role==1){%&gt;
+					&lt;a class="group-manage-a"&gt;&lt;i class="icon-group-manage manage&lt;%=item.uin%&gt;" &lt;%if(type == 'create'){%&gt;title="取消管理员" data-tag="delmanage" data-id="&lt;%=item.uin%&gt;"&lt;%}%&gt;&gt;&lt;/i&gt;&lt;/a&gt;
+				&lt;%}else{%&gt;
+					&lt;a&gt;&lt;i class="manage&lt;%=item.uin%&gt;" data-id="&lt;%=item.uin%&gt;"&gt;&lt;/i&gt;&lt;/a&gt;
+				&lt;%}%&gt;
+				&lt;img class="icon-deficon" src="//qun.qq.com/css/imgs/space.gif" id="useIcon&lt;%=item.uin%&gt;" /&gt;
+				&lt;%if(item.flag &amp; 0x1){%&gt; 
+					&lt;a class="flag" &lt;%if(ie6){%&gt;href="javascript:void(0);"&lt;%}%&gt; hidefocus="true" title="不良记录成员"&gt;&lt;i class="icon-member-flag"&gt;&lt;/i&gt;&lt;/a&gt;
+				&lt;%}%&gt;				
+				&lt;span&gt;
+					&lt;%
+						if(item.match &amp;&amp; item.match.type &amp; 0x2){
+					%&gt;
+						&lt;%=show(item.match.word,html(item.nick))%&gt;
+					&lt;%}else{%&gt;
+						&lt;%=html(item.nick)%&gt;
+					&lt;%}%&gt;
+				&lt;/span&gt;
+			&lt;/td&gt;
+			&lt;td class="td-card"&gt;
+					&lt;%
+						if((type!='join' &amp;&amp; !(item.flag&amp;0x2)) || item.uin == my){
+					%&gt;
+					&lt;span&gt;
+						&lt;span class="group-card group-card&lt;%=item.uin%&gt;"&gt;
+							&lt;%if(item.match &amp;&amp; item.match.type &amp; 0x1){%&gt;
+								&lt;%=show(item.match.word,html(item.card))%&gt;
+							&lt;%}else{%&gt;			
+								&lt;%=html(item.card)%&gt;
+							&lt;%}%&gt;
+						&lt;/span&gt;
+						&lt;input class="member-card" id="member-card&lt;%=item.uin%&gt;" value="&lt;%if(item.card){%&gt;&lt;%=item.card%&gt;&lt;%}%&gt;" type="text" data-old="&lt;%if(item.card){%&gt;&lt;%=item.card%&gt;&lt;%}%&gt;" data-id="&lt;%=item.uin%&gt;" &lt;%if(item.match &amp;&amp; item.match.type==1){%&gt;data-key="&lt;%=item.match.word%&gt;"&lt;%}%&gt; /&gt;
+					&lt;/span&gt;
+					&lt;%}else{%&gt;
+						&lt;span class="white"&gt;
+							&lt;%if(item.card){%&gt;&lt;%=html(item.card)%&gt;&lt;%}%&gt;
+						&lt;/span&gt;
+					&lt;%}%&gt;
+				
+			&lt;/td&gt;
+			&lt;%if(tag){%&gt;
+			&lt;td class="td-mark"  data-tags="&lt;%=attr(item.tags)%&gt;" data-id="&lt;%=item.uin%&gt;"&gt;
+				&lt;%if(type != 'join' || item.uin == my){%&gt;
+				&lt;div class="td-mark-old" data-type="&lt;%=item.tags%&gt;"&gt;
+					&lt;span&gt;
+						&lt;%if(tag &amp;&amp; item.tags&gt;=0){%&gt;&lt;%=tag[item.tags]%&gt;&lt;%}else{%&gt;　&lt;%}%&gt;
+					&lt;/span&gt;
+					&lt;i class="icon-arrow-gray"&gt;&lt;/i&gt;
+				&lt;/div&gt;
+				&lt;%}else{%&gt;
+					&lt;%if(tag &amp;&amp; item.tags&gt;=0){%&gt;&lt;%=tag[item.tags]%&gt;&lt;%}%&gt;
+				&lt;%}%&gt;
+			&lt;/td&gt;
+			&lt;%}%&gt;
+			&lt;td&gt;
+					&lt;%if(item.match &amp;&amp; item.match.type&amp;0x4){%&gt;
+						&lt;%=show(item.match.word,item.uin)%&gt;
+					&lt;%}else{%&gt;			
+						&lt;%=item.uin%&gt;
+					&lt;%}%&gt;
+			&lt;/td&gt;
+			&lt;td&gt;
+				&lt;%if(item.g === 1){%&gt;
+				女
+				&lt;%}else if(item.g === 0){%&gt;
+				男
+				&lt;%}else{%&gt;
+				未知
+				&lt;%}%&gt;
+			&lt;/td&gt;
+			&lt;td&gt;&lt;%if(typeof item.qage != 'undefined'){%&gt;&lt;%=item.qage%&gt;年&lt;%}%&gt;&lt;/td&gt;
+			&lt;td&gt;
+				&lt;%if(item.join_time){%&gt;
+				&lt;%=time(item.join_time)%&gt;
+				&lt;%}else{%&gt;
+					2012年5月以前
+				&lt;%}%&gt;
+			&lt;/td&gt;
+			&lt;%if(lv){%&gt;
+			&lt;td&gt;&lt;%if(lv){%&gt;&lt;%=lv[item.lv.level]%&gt;(&lt;%=item.lv.point%&gt;)&lt;%}%&gt;&lt;/td&gt;
+			&lt;%}%&gt;
+			&lt;td&gt;
+				&lt;%if(item.last_speak_time){%&gt;
+					&lt;%=time(item.last_speak_time)%&gt;
+				&lt;%}else{%&gt;
+					-
+				&lt;%}%&gt;
+			&lt;/td&gt;
+			&lt;td class="td-delete"&gt;
+				&lt;%if(type == 'create'){%&gt;
+					&lt;%if(item.role != 0){%&gt;
+					&lt;i class="icon-close" title="删除该成员" data-tag="delmemberico" data-id="&lt;%=attr(item.uin)%&gt;"&gt;&lt;/i&gt;
+					&lt;%}%&gt;
+				&lt;%}else if(type=='manage'){%&gt;
+					&lt;%if(item.role == 2){%&gt;
+						&lt;i class="icon-close" title="删除该成员" data-tag="delmemberico" data-id="&lt;%=attr(item.uin)%&gt;"&gt;&lt;/i&gt;
+					&lt;%}%&gt;					
+				&lt;%}%&gt;				
+			&lt;/td&gt;
+		&lt;/tr&gt;	
+		&lt;%}%&gt;
+		&lt;/tbody&gt;
+	</script>
+
+	<script type="text/template" id="groupMemberTitTmp">
+		群成员人数: &lt;span id="groupMemberNum"&gt;&lt;%=html(num)%&gt;&lt;/span&gt;/&lt;%=html(all)%&gt;
+		&lt;%if(type == 'create' || type == 'manage'){%&gt;
+		&lt;button cmd="add" class="add-member" data-tag="addmember"&gt;添加成员&lt;/button&gt;
+		&lt;%}%&gt;
+		&lt;%if(type == 'create'){%&gt;
+		&lt;button cmd="set" disabled class="set-manage disabled" data-tag="setmanage"&gt;设置管理员&lt;/button&gt;
+		&lt;%}%&gt;
+		&lt;%if(type == 'create' || type == 'manage'){%&gt;
+		&lt;button cmd="del" disabled class="disabled del-member" data-tag="delmemberbtn"&gt;删除成员&lt;/button&gt;
+		&lt;%}%&gt;
+	</script>
+
+	<script type="text/template" id="groupLevelTmp">
+		&lt;li&gt;
+			&lt;label&gt;等　　级：&lt;/label&gt;
+		&lt;/li&gt;
+		&lt;li class="query-filter &lt;%if(!filter.lv){%&gt;selected&lt;%}%&gt;" data-idx="0"&gt;不限&lt;/li&gt;
+		&lt;%
+			for(var i in list){
+		%&gt;
+			&lt;li class="query-filter &lt;%if(filter.lv &amp;&amp; filter.lv == i){%&gt;selected&lt;%}%&gt;" data-idx="&lt;%=attr(i)%&gt;"&gt;&lt;%=list[i]%&gt;&lt;/li&gt;
+		&lt;%}%&gt;
+	</script>	
+
+	<script type="text/template" id="smartTmp">
+		&lt;ul&gt;
+		&lt;%
+		for(var i=0,l=list.length;i&lt;l;i++){
+			var item = list[i];
+		%&gt;
+			&lt;li title="&lt;%=item.gn%&gt;" data-tag="clicksearch" data-id="&lt;%=attr(item.gc)%&gt;"&gt;
+				&lt;a data-tag="clicksearch"&gt;&lt;img data-tag="clicksearch" class="icon-def-gicon gicon&lt;%=attr(item.gc)%&gt;" &lt;%if(item.face){%&gt;src="&lt;%=item.face%&gt;"&lt;%}%&gt; /&gt;
+				&lt;%=item.ogn%&gt;(&lt;%=item.ogc%&gt;)&lt;/a&gt;
+			&lt;/li&gt;
+		&lt;%}%&gt;
+		&lt;/ul&gt;
+	</script>
+
+	<script type="text/template" id="myGroupTmp">
+	&lt;div class="member-body"&gt;
+		&lt;%if(data.nums){%&gt;
+		&lt;div class="input-tit"&gt;
+			&lt;div class="input-search"&gt;
+				&lt;input type="text" class="dialog-search-input" value="搜索群名称或群号" data-def="搜索群名称或群号" /&gt;
+				&lt;button class="group-search-btn icon-search-btn"&gt;&lt;/button&gt;
+			&lt;/div&gt;
+			&lt;div class="search-smart"&gt;
+			&lt;/div&gt;
+		&lt;/div&gt;	
+		&lt;div class="my-all-group"&gt;
+			
+			&lt;%if(data.create &amp;&amp; data.create.length){%&gt;
+			&lt;h4&gt;我创建的群(&lt;%=data.create.length%&gt;)&lt;/h4&gt;	
+			&lt;ul class="my-group-list"&gt;
+				&lt;%
+					for(var i = 0,l=data.create.length;i&lt;l;i++){
+						var item = data.create[i];
+				%&gt;
+				&lt;li title=&lt;%=attr(item.gn)%&gt; data-id="&lt;%=attr(item.gc)%&gt;"&gt;
+					&lt;img class="icon-def-gicon gicon&lt;%=attr(item.gc)%&gt;" &lt;%if(item.face){%&gt;src="&lt;%=item.face%&gt;"&lt;%}%&gt; /&gt;
+					&lt;%=item.gn%&gt;
+				&lt;/li&gt;
+				&lt;%}%&gt;
+			&lt;/ul&gt;
+			&lt;%}%&gt;
+
+			&lt;%if(data.manage &amp;&amp; data.manage.length){%&gt;
+			&lt;h4 class="top"&gt;我管理的群(&lt;%=data.manage.length%&gt;)&lt;/h4&gt;	
+			&lt;ul class="my-group-list"&gt;
+				&lt;%
+					for(var i = 0,l=data.manage.length;i&lt;l;i++){
+						var item = data.manage[i];
+				%&gt;
+				&lt;li title=&lt;%=attr(item.gn)%&gt; data-id="&lt;%=attr(item.gc)%&gt;"&gt;
+					&lt;img  class="icon-def-gicon gicon&lt;%=attr(item.gc)%&gt;"  &lt;%if(item.face){%&gt;src="&lt;%=item.face%&gt;"&lt;%}%&gt; /&gt;
+					&lt;%=item.gn%&gt;
+				&lt;/li&gt;
+				&lt;%}%&gt;
+			&lt;/ul&gt;	
+			&lt;%}%&gt;			
+
+			&lt;%if(data.join &amp;&amp; data.join.length){%&gt;
+			&lt;h4 class="top"&gt;我加入的群(&lt;%=data.join.length%&gt;)&lt;/h4&gt;	
+			&lt;ul class="my-group-list"&gt;
+				&lt;%
+					for(var i = 0,l=data.join.length;i&lt;l;i++){
+						var item = data.join[i];
+				%&gt;
+				&lt;li title=&lt;%=attr(item.gn)%&gt; data-id="&lt;%=attr(item.gc)%&gt;"&gt;
+					&lt;img class="icon-def-gicon gicon&lt;%=attr(item.gc)%&gt;"  &lt;%if(item.face){%&gt;src="&lt;%=item.face%&gt;"&lt;%}%&gt; /&gt;
+					&lt;%=item.gn%&gt;
+				&lt;/li&gt;
+				&lt;%}%&gt;
+			&lt;/ul&gt;
+			&lt;%}%&gt;		
+			&lt;/div&gt;
+		&lt;%}else{%&gt;
+			&lt;div class="my-all-group"&gt;
+			&lt;div class="tips"&gt;&lt;i class="icon-dialog-alert"&gt;&lt;/i&gt;您当前没有加入任何群，现在就去&lt;a href="//id.qq.com/index.html#qun-create" target="_blank"&gt;创建群&lt;/a&gt;吧！&lt;/div&gt;
+			&lt;/div&gt;
+		&lt;%}%&gt;
+
+	&lt;/div&gt;	
+	</script>
+
+	<script type="text/template" id="oneTipsTmp">
+		&lt;li class="tags-li"&gt;&lt;a&gt;&lt;input type="text" value="&lt;%=name%&gt;" /&gt; &lt;i class="icon-close" data-name="&lt;%=name%&gt;"&gt;&lt;/i&gt;&lt;/a&gt;&lt;/li&gt;
+	</script>
+
+	<script type="text/template" id="addTipsTmp">
+		&lt;div class="member-body"&gt;
+			&lt;div class="input-tit"&gt;
+				&lt;div class="input-search"&gt;
+					&lt;input type="text" class="group-tips-txt" /&gt;
+				&lt;/div&gt;
+				&lt;div class="input-btn"&gt;
+					&lt;input type="button" value="添加" /&gt;
+				&lt;/div&gt;
+			&lt;/div&gt;
+			&lt;div style="clear:both;height:200px;"&gt;
+				&lt;div class="dialog-tips"&gt;
+					&lt;i class="icon-dialog-tips"&gt;&lt;/i&gt;&lt;span&gt;标签名称长度不超过8个汉字&lt;/span&gt;
+				&lt;/div&gt;
+				&lt;ul class="member-label-list" id="memberLabelList"&gt;
+					&lt;%
+						for(var i in list){
+							var item = list[i];
+					%&gt;
+						&lt;li class="tags-li"&gt;&lt;a &lt;%if(ie6){%&gt;href="javascript:void(0);"&lt;%}%&gt;&gt;&lt;input class="tags-input"  data-id="&lt;%=i%&gt;" type="text" value="&lt;%=item%&gt;" /&gt; &lt;i class="icon-close" data-id="&lt;%=i%&gt;"&gt;&lt;/i&gt;&lt;/a&gt;&lt;/li&gt;
+					&lt;%}%&gt;
+				&lt;/ul&gt;
+				&lt;div class="dialog-tips"&gt;
+					&lt;i class="icon-dialog-tips"&gt;&lt;/i&gt;&lt;span&gt;标签个数不超过20个&lt;/span&gt;&lt;/div&gt;
+				&lt;div class="clear"&gt;&lt;/div&gt;
+			&lt;/div&gt;
+		&lt;/div&gt;
+	</script>
+
+	<script>
+		var BJ_REPORT = (function(global) {
+		    if (global.BJ_REPORT) return global.BJ_REPORT;
+
+		    var _error = [];
+		    var orgError = global.onerror;
+		    global.onerror = function(msg, url, line, col, error) {
+		    };
+
+		    var _config = {
+		        id: 0,
+		        uin: 0,
+		        url: "",
+		        combo: 1,
+		        ext: {},
+		        level: 4, // 1-debug 2-info 4-error 8-fail
+		        ignore: [],
+		        random: 1,
+		        delay: 1000,
+		        submit: null
+		    };
+
+		    var _isOBJByType = function(o, type) {
+		        return Object.prototype.toString.call(o) === "[object " + (type || "Object") + "]";
+		    };
+
+		    var _isOBJ = function(obj) {
+		        var type = typeof obj;
+		        return type === 'object' &amp;&amp; !!obj;
+		    };
+
+
+		    var _processError = function(errObj) {
+		        try {
+		            if (errObj.stack) {
+		                var url = errObj.stack.match('//[^\n]+');
+		                url = url ? url[0] : "";
+		                var rowCols = url.match(':([0-9]+):([0-9]+)');
+		                if (!rowCols) {
+		                    rowCols = [0, 0, 0];
+		                }
+
+		                var stack = _processStackMsg(errObj);
+		                return {
+		                    msg: stack,
+		                    rowNum: rowCols[1],
+		                    colNum: rowCols[2],
+		                    target: url.replace(rowCols[0], '')
+		                        /* stack : stack*/
+		                };
+		            } else {
+		                return errObj;
+		            }
+		        } catch (err) {
+		            return errObj;
+		        }
+		    };
+
+		    var _processStackMsg = function(error) {
+		        var stack = error.stack.replace(/\n/gi, '').split(/\bat\b/).slice(0, 5).join("@").replace(/\?[^:]+/gi, "");
+		        var msg = error.toString();
+		        if (stack.indexOf(msg) &lt; 0) {
+		            stack = msg + "@" + stack;
+		        }
+		        return stack;
+		    };
+
+		    var _error_tostring = function(error, index) {
+		        var param = [];
+		        var params = [];
+		        var stringify = [];
+		        if (_isOBJ(error)) {
+		            error.level = error.level || _config.level;
+		            for (var key in error) {
+		                var value = error[key] || "";
+		                if (value) {
+		                    if (_isOBJ(value)) {
+		                        try {
+		                            value = JSON.stringify(value);
+		                        } catch (err) {
+		                            value = "[BJ_REPORT detect value stringify error] " + err.toString();
+		                        }
+		                    }
+		                    stringify.push(key + ":" + value);
+		                    param.push(key + "=" + encodeURIComponent(value));
+		                    params.push(key + "[" + index + "]=" + encodeURIComponent(value));
+		                }
+		            }
+		        }
+
+		        // msg[0]=msg&amp;target[0]=target -- combo report
+		        // msg:msg,target:target -- ignore
+		        // msg=msg&amp;target=target -- report with out combo
+		        return [params.join("&amp;"), stringify.join(","), param.join("&amp;")];
+		    };
+
+		    var _imgs = [];
+		    var _submit = function(url) {
+		        if (_config.submit) {
+		            _config.submit(url);
+		        } else {
+		            var _img = new Image();
+		            _imgs.push(_img);
+		            _img.src = url;
+		        }
+		    };
+
+		    var error_list = [];
+		    var comboTimeout = 0;
+		    var _send = function(isReoprtNow) {
+		        if (!_config.report) return;
+
+		        while (_error.length) {
+		            var isIgnore = false;
+		            var error = _error.shift();
+		            var error_str = _error_tostring(error, error_list.length);
+		            for (var i = 0, l = _config.ignore.length; i &lt; l; i++) {
+		                var rule = _config.ignore[i];
+		                if ((_isOBJByType(rule, "RegExp") &amp;&amp; rule.test(error_str[1])) ||
+		                    (_isOBJByType(rule, "Function") &amp;&amp; rule(error, error_str[1]))) {
+		                    isIgnore = true;
+		                    break;
+		                }
+		            }
+		            if (!isIgnore) {
+		                if (_config.combo) {
+		                    error_list.push(error_str[0]);
+		                } else {
+		                    _submit(_config.report + error_str[2] + "&amp;_t=" + (+new Date));
+		                }
+		                _config.onReport &amp;&amp; (_config.onReport(_config.id, error));
+		            }
+		        }
+
+		        // 合并上报
+		        var count = error_list.length;
+		        if (count) {
+		            var comboReport = function() {
+		                clearTimeout(comboTimeout);
+		                _submit(_config.report + error_list.join("&amp;") + "&amp;count=" + count + "&amp;_t=" + (+new Date));
+		                comboTimeout = 0;
+		                error_list = [];
+		            };
+
+		            if (isReoprtNow) {
+		                comboReport(); // 立即上报
+		            } else if (!comboTimeout) {
+		                comboTimeout = setTimeout(comboReport, _config.delay); // 延迟上报
+		            }
+		        }
+		    };
+
+		    var report = {
+		        push: function(msg) { // 将错误推到缓存池
+		            if (Math.random() &gt;= _config.random) {
+		                return report;
+		            }
+		            _error.push(_isOBJ(msg) ? _processError(msg) : {
+		                msg: msg
+		            });
+		            _send();
+		            return report;
+		        },
+		        info : function(msg){
+			    	if(Math.random()*100&gt;2){
+			    		return;
+			    	}
+
+		            if (!msg) {
+		                return report;
+		            }
+		            if (_isOBJ(msg)) {
+		                msg.level = 2;
+		            } else {
+		                msg = {
+		                    msg: msg,
+		                    level: 2
+		                };
+		            }
+		            report.push(msg);
+		            return report;
+		        },
+		        init: function(config) { // 初始化
+		            if (_isOBJ(config)) {
+		                for (var key in config) {
+		                    _config[key] = config[key];
+		                }
+		            }
+		            // 没有设置id将不上报
+		            var id = parseInt(_config.id, 10);
+		            if (id) {
+		                _config.report = (_config.url || "//badjs2.qq.com/badjs") + "?id=" + id + "&amp;uin=" + parseInt(_config.uin || (document.cookie.match(/\buin=\D+(\d+)/) || [])[1], 10) + "&amp;from=" + encodeURIComponent(location.href) + "&amp;ext=" + JSON.stringify(_config.ext) + "&amp;";
+		            }
+		            return report;
+		        },
+
+		        __onerror__: global.onerror
+
+
+		    };
+
+		    return report;
+		}(window));
+
+		BJ_REPORT.init({
+		    id: 85
+		});	
+	</script>
+
+	<script charset="utf-8" src="//s.url.cn/pub/js/qreport.js?_bid=2231"></script>
+
+	<script src="//s1.url.cn/qqun/qun/js/lib/jquery-9519b.js"></script>
+	
+	<script src="//s1.url.cn/qqun/qun/js/lib/jquery.base-fe8ad.js"></script>
+
+	<script src="//s1.url.cn/qqun/qun/js/public/base_member-0ca65.js"></script><div class="ui-overlay" style="display: block;"></div>
+	<script src="//s1.url.cn/qqun/qun/js/member-d6d6a.js"></script><div id="loginWin" class="ui-login" style="display: block;"><iframe name="login_frame" frameborder="0" scrolling="auto" width="100%" height="100%" src="https://xui.ptlogin2.qq.com/cgi-bin/xlogin?appid=715030901&amp;daid=73&amp;hide_close_icon=1&amp;pt_no_auth=1&amp;s_url=https%3A%2F%2Fqun.qq.com%2Fmember.html"></iframe></div>
+
+
+
+</body></html>
