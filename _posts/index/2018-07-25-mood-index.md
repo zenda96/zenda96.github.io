@@ -1,7 +1,6 @@
 ---
 layout: display
 title:  "mood全部文章"
-date:   2018-07-25 20:24:50 
 categories: index
 excerpt: "111"
 ---
@@ -9,8 +8,12 @@ excerpt: "111"
 {% for category in site.categories %}
         {% if category[0]=='mood' %}
             {% for post in category[1] %}
-            <li><a href="{{post.url}}">{{post.title}}</a>
-            <br>{{page.excerpt}}
+            <li>
+                <div>
+                     <a href="{{post.url}}">{{post.title}}</a>
+                </div>
+                {{post.digest}}
+                <span class="post-date">{{ post.date | date_to_string }}</span>
             </li>
             {% endfor %}
         {% endif%}
