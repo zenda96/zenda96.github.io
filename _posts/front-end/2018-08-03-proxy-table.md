@@ -13,7 +13,7 @@ digest: "通过设置代理解决跨域问题"
 另外一种就是在 webpack 里面设置代理了 更多说明请参考[官方文档](https://webpack.js.org/configuration/dev-server/#devserver-proxy "官方文档") 如下:  
 假设我们的后端接口地址为   localhost:3000 我们可以在 config/index.js 里这样设置代理  
 
-```
+{% highlight javascript %}
 module.exports = {
     //...
     devServer: {
@@ -22,12 +22,14 @@ module.exports = {
         }
     }
 };
-```
+{% endhighlight %}
+
 使用的vue-cli开发 同样提供了 proxyTable 和下面的操作一样  
 以`/api/users`开头的请求都会被重新代理到 `http://localhost:3000/api/users`  
 如果不想始终传递 /api ，则需要重写路径  
 
-```
+{% highlight javascript %}
+
 module.exports = {
   //...
   devServer: {
@@ -39,11 +41,13 @@ module.exports = {
     }
   }
 };
-```
+{% endhighlight %}
+
 
 在https上运行并且使用无效证书的后端服务 得如下修改配置:  
 
-```
+{% highlight javascript %}
+
 module.exports = {
   //...
   devServer: {
@@ -55,10 +59,12 @@ module.exports = {
     }
   }
 };
-```
+{% endhighlight %}
+
 
 多个路径代理同一后端地址  
-```
+{% highlight javascript %}
+
 module.exports = {
   //...
   devServer: {
@@ -68,5 +74,6 @@ module.exports = {
     }]
   }
 };
-```
+{% endhighlight %}
+
 

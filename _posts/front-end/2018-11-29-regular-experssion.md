@@ -13,7 +13,8 @@ digest: "是时候来个总结了"
 - 1.字面量创建方式 
 - 2.实例创建方式 
 
-```
+{% highlight javascript %}
+
     var reg = /pattern/flags
     // 字面量创建方式
     var reg = new RegExp(pattern,flags);
@@ -25,26 +26,35 @@ digest: "是时候来个总结了"
     1. i 忽略大小写匹配
     2. m 多行匹配，即在到达一行文本末尾时还会继续寻常下一行中是否与正则匹配的项
     3. g 全局匹配 模式应用于所有字符串，而非在找到第一个匹配项时停止
-```
+
+{% endhighlight %}
 **字面量创建方式和构造函数创建方式的区别**
 
 - 字面量创建方式不能进行字符串拼接以及使用变量，实例创建方式可以
-```
+
+{% highlight javascript %}
+
     var regParam = 'cm';
     var reg1 = new RegExp(regParam+'1');
     var reg2 = /regParam/;
-    console.log(reg1);  //   /cm1/
+    console.log(reg1);  //   /cm1
     console.log(reg2);  //  /regParam/
-```
+
+{% endhighlight %}
+
 - 字面量创建方式特殊含义的字符不需要转义，实例创建方式需要转义
-```
+
+{% highlight javascript %}
     var reg1 = new RegExp('\d');  //    /d/ 
     var reg2 = new RegExp('\\d')  //   /\d/
     var reg3 = /\d/;              //  /\d/
-```
+
+{% endhighlight %}
+
 
 ### 3.正则用到的元字符
-```
+{% highlight javascript %}
+
 \d : 0-9之间的任意一个数字  \d只占一个位置
 \w : 数字，字母 ，下划线 0-9 a-z A-Z _
 \s : 空格或者空白等
@@ -70,10 +80,13 @@ digest: "是时候来个总结了"
 {n,} : n到多次
 {n,m} : n次到m次
 
-```
+
+{% endhighlight %}
+
 
 ***特别注意:[ ]中，不会出现两位数***
-```
+{% highlight javascript %}
+
 [12]表示1或者2 不过[0-9]这样的表示0到9 [a-z]表示a到z
 例如:匹配从18到65年龄段所有的人
 var reg = /[18-65]/; // 这样写对么
@@ -83,7 +96,9 @@ reg.test('50')
 实际上我们匹配这个18-65年龄段的正则我们要拆开来匹配
 我们拆成3部分来匹配 18-19  20-59 60-65 
 reg = /(18|19)|([2-5]\d)|(6[0-5])/;
-```
+
+{% endhighlight %}
+
 
 ##### 分组：
 只要正则中出现了小括号那么就会形成一份分组
@@ -94,7 +109,8 @@ reg = /(18|19)|([2-5]\d)|(6[0-5])/;
 
 当我们加()只是为了提高优先级而不想捕获小分组时，可以在()中加?:来取消分组的捕获
 
-```
+{% highlight javascript %}
+
 var str = 'aaabbb';
 var reg = /(a+)(b+)/;
 var res =reg.exec(str);
@@ -109,7 +125,9 @@ console.log(res)
 //["aaabbb", "aaa", "bbb", index: 0, input: "aaabbb", groups: undefined]
 //只捕获第一个小分组的内容
 
-```
+
+{% endhighlight %}
+
 
 #### 正则的特性
 - 贪婪性
@@ -126,14 +144,19 @@ console.log(res)
 - str.replace(reg)
 
 **reg.test(str) 用来验证字符串是否符合正则 符合返回true 否则返回false**
-```
+
+{% highlight javascript %}
+
 var str = 'abc';
 var reg = /\w+/;
 console.log(reg.test(str));  //true
-```
+
+{% endhighlight %}
+
 
 **reg.exec(str) 用来捕获符合规则的字符串**
-```
+{% highlight javascript %}
+
 var str = '2017-01-05';
 var reg = /-\d+/g
 reg.exec(str)
@@ -146,9 +169,12 @@ reg.exec(str)
 
 "-01" : 正则捕获到的内容
 "01"  : 捕获到的字符串中的小分组中的内容
-```
+
+{% endhighlight %}
+
 **exec 的特点是 当我们用exec进行捕获时，如果正则没有加'g'标识符，则exec捕获的每次都是同一个，当正则中有'g'标识符时 ， exec捕获的是下一个**
-```
+{% highlight javascript %}
+
 var str = 'abc123cba456aaa789';
 var reg = /\d+/g;  //此时加了标识符g
 console.log(reg.lastIndex)
@@ -179,10 +205,14 @@ lastIndex ：这个属性记录的就是下一次捕获从哪个索引开始。
 当未开始捕获时，这个值为0。          
 如果当前次捕获结果为null。那么lastIndex的值会被修改为0.下次从头开始捕获。
 而且这个lastIndex属性还支持人为赋值
-```
+
+{% endhighlight %}
+
 
 **str.match(reg)如果匹配成功，就返回匹配成功的数组，如果匹配不成功，就返回null**
-```
+
+{% highlight javascript %}
+
 //match和exec的用法差不多
 var str = 'abc123cba456aaa789';
 var reg = /\d+/;
@@ -190,9 +220,12 @@ console.log(reg.exec(str));
 //["123", index: 3, input: "abc123cba456aaa789"]
 console.log(str.match(reg));
 //["123", index: 3, input: "abc123cba456aaa789"]
-```
+
+{% endhighlight %}
+
 当我们进行全局匹配时，二者的不同就会显现出来了
-```
+{% highlight javascript %}
+
 var str = 'abc123cba456aaa789';
 var reg = /\d+/g;
 console.log(reg.exec(str));
@@ -201,10 +234,13 @@ console.log(str.match(reg));
 // ["123", "456", "789"]
 
 当全局匹配时，match方法会一次性把符合匹配条件的字符串全部捕获到数组中,如果想用exec来达到同样的效果需要执行多次exec方法
-```
+
+{% endhighlight %}
+
 
 **match和exec都可以受到分组()的影响，不过match只在没有标识符g的情况下才显示小分组的内容，如果有全局g，则match会一次性全部捕获放到数组中**
-```
+{% highlight javascript %}
+
 var str = 'abc';
 var reg = /(a)(b)(c)/;
 
@@ -221,12 +257,15 @@ console.log( str.match(reg) );
 // ["abc"]
 console.log( reg.exec(str) );
 // ["abc", "a", "b", "c", index: 0, input: "abc"]
-```
+
+{% endhighlight %}
+
 
 **str.replace(reg,newStr)字符串替换**  
 replace的第二个参数也可以是一个函数 ，需要注意的是，如果我们需要替换replace中正则找到的字符串，函数中需要一个返回值去替换正则捕获的内容
 
-```
+{% highlight javascript %}
+
 var str = 'a111bc222de';
 var res = str.replace(/\d/g,'Q')
 console.log(res)
@@ -246,7 +285,9 @@ str.replace(reg,function($0,$1,$2,$3,$4){
 //a=1 a 1 22 https://www.baidu.com?a=1&b=2
 //b=2 b 2 26 https://www.baidu.com?a=1&b=2
 //"https://www.baidu.com?undefined&undefined"
-```
+
+{% endhighlight %}
+
 
 ### 零宽断言
 
@@ -261,7 +302,8 @@ str.replace(reg,function($0,$1,$2,$3,$4){
 
 **(?=exp) 这个简单理解就是说字符出现的位置的右边必须匹配到exp这个表达式**
 
-```
+{% highlight javascript %}
+
 var str = "i'm singing and dancing";
 var reg = /\b(\w+(?=ing\b))/g
 var res = str.match(reg);
@@ -277,28 +319,39 @@ console.log(res.test(str));  // false
 reg中a(?=b)匹配字符串'abc' 字符串a的右边是b这个匹配没问题,接下来reg中a(?=b)后边的c匹配字符串时是从字符串
 'abc'中a的后边b的前边的这个位置开始匹配的，
 这个相当于/ac/匹配'abc',显然结果是false了
-```
+
+{% endhighlight %}
+
 
 **(?!exp) 这个就是说字符出现的位置的右边不能是exp这个表达式**
-```
+{% highlight javascript %}
+
 var str = 'nodejs';
 var reg = /node(?!js)/;
 console.log(reg.test(str)) // false
-```
+
+{% endhighlight %}
+
 
 **(?<=exp) 这个就是说字符出现的位置的前边是exp这个表达式**
-```
+{% highlight javascript %}
+
 var str = '￥998$888';
 var reg = /(?<=\$)\d+/;
 console.log(reg.exec(str)) //888
-```
+
+{% endhighlight %}
+
 
 **(?<!exp) 这个就是说字符出现的位置的前边不能是exp这个表达式**
-```
+{% highlight javascript %}
+
 var str = '￥998$888';
 var reg = /(?<!\$)\d+/;
 console.log(reg.exec(str)) //998
-```
+
+{% endhighlight %}
+
 
 来一张思维导图
 
