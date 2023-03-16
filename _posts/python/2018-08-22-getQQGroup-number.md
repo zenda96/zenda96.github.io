@@ -1,6 +1,6 @@
 ---
 layout: display
-title:  "利用pytthon获取qq群成员的QQ号码等相关信息"
+title:  "利用python获取qq群成员的QQ号码等相关信息"
 categories: python
 digest: "只能爬取扫描登陆的人所加入的QQ群组"
 ---
