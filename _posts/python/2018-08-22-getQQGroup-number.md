@@ -112,3 +112,7 @@ digest: "只能爬取扫描登陆的人所加入的QQ群组"
     main([809369396, 518486503, 773524292, 696665378,540536106, 781221268, 791970584, 823883693])
 
 {% endhighlight %}
+
+等待程序执行完后，会得到几个excel表，表名和表项可以根据自己的需要清洗出来
+![爬取结果]({{"images/work/py_excel.jpeg"|absolute_url}})
+![爬取结果]({{"images/work/py_excel1.jpeg"|absolute_url}})
