@@ -1,6 +1,6 @@
 // 加载时候展示loading动图
 $(document).ready(function(){
-    $('loading').show();
+    $('.loading').show();
 })
 
 // 图片文件全部加载完毕后执行
