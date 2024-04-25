@@ -190,7 +190,7 @@ window.onload = function() {
         },
     });
     $('.loading').fadeOut();
-    $('#fullpage').fullpage.moveTo(9)
+    $('#fullpage').fullpage.moveTo(1)
 
     showPage1();
 
