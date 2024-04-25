@@ -165,27 +165,27 @@ window.onload = function() {
                         }
                     }
                     break;
-                case 11:
-                    {
-                        hidePage11();
-                        showPage11();
-                        if (index == 10) {
-                            hidePage10();
-                        }
-                        if (index == 12) {
-                            hidePage12();
-                        }
-                    }
-                    break;
-                case 12:
-                    {
-                        hidePage12();
-                        showPage12();
-                        if (index == 11) {
-                            hidePage11();
-                        }
-                    }
-                    break;
+                // case 11:
+                //     {
+                //         hidePage11();
+                //         showPage11();
+                //         if (index == 10) {
+                //             hidePage10();
+                //         }
+                //         if (index == 12) {
+                //             hidePage12();
+                //         }
+                //     }
+                //     break;
+                // case 12:
+                //     {
+                //         hidePage12();
+                //         showPage12();
+                //         if (index == 11) {
+                //             hidePage11();
+                //         }
+                //     }
+                //     break;
             }
         },
     });
@@ -529,7 +529,7 @@ var hidePage8 = function() {
     $('.page8 .arrow').hide()
 }
 var showPage9 = function() {
-    console.log('ssss')
+    console.log('begin')
     window.p9t1 = setTimeout(function() {
         $('.page9 .title').show()
         $('.page9 .title img').addClass('fadeIn')
